@@ -27,6 +27,7 @@ form.addEventListener("submit", async function (e) {
     if (response.ok) {
       statusText.textContent = "Message sent successfully.";
       statusText.style.color = "#38bdf8";
+      window.location.href = "thank_you.html";
       form.reset();
     } else {
       statusText.textContent = result.error || "Something went wrong.";
