@@ -29,36 +29,35 @@
           reach out.
         </p>
 
-        <form id="contactForm" class="card">
+        <form name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea
             name="message"
             placeholder="Your Message"
-            rows="5"
             required
           ></textarea>
 
           <button class="btn" type="submit">Send Message</button>
-
-          <p id="formStatus" style="margin-top: 15px"></p>
         </form>
 
         <script src="js/contact.js"></script>
       </div>
     </section>
 
-<footer>
-  <div class="container footer">
-    <p>© 2026 Pushpender Prajapati</p>
+    <footer>
+      <div class="container footer">
+        <p>© 2026 Pushpender Prajapati</p>
 
-    <div class="footer-links">
-      <a href="mailto:pushpenderprajapati1084@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/" target="_blank">GitHub</a>
-      <a href="https://leetcode.com/" target="_blank">LeetCode</a>
-    </div>
-  </div>
-</footer>
+        <div class="footer-links">
+          <a href="mailto:pushpenderprajapati1084@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/" target="_blank">GitHub</a>
+          <a href="https://leetcode.com/" target="_blank">LeetCode</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
