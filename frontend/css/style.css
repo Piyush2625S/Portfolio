@@ -349,3 +349,61 @@ input:focus, textarea:focus {
 .project-meta li {
   margin-bottom: 10px;
 }
+
+
+/* CONTACT FORM */
+form {
+  max-width: 520px;
+  margin-top: 40px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #1f2933;
+  background: #020617;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--muted);
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Fix Chrome autofill background issue */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0px 1000px #020617 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input {
+  caret-color: var(--accent);
+}
+
+
+/* Submit button spacing */
+form button {
+  margin-top: 10px;
+}
