@@ -14,7 +14,7 @@ form.addEventListener("submit", async function (e) {
   };
 
   try {
-    const response = await fetch("http://localhost:5000/api/contact", {
+    const response = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
