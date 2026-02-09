@@ -1,40 +1,29 @@
-const form = document.getElementById("contactForm");
-const statusText = document.getElementById("formStatus");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
 
-form.addEventListener("submit", async function (e) {
-  e.preventDefault(); // STOP page reload
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  statusText.textContent = "Sending message...";
-  statusText.style.color = "#9ca3af";
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
 
-  const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value,
-  };
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      statusText.textContent = "Message sent successfully.";
-      statusText.style.color = "#38bdf8";
-      window.location.href = "thank_you.html";
-      form.reset();
-    } else {
-      statusText.textContent = result.error || "Something went wrong.";
-      statusText.style.color = "red";
+      if (res.ok) {
+        window.location.href = "thank_you.html";
+      } else {
+        alert("Submission failed");
+      }
+    } catch (err) {
+      alert("Server not reachable");
     }
-  } catch (error) {
-    statusText.textContent = "Server not reachable.";
-    statusText.style.color = "red";
-  }
+  });
 });
